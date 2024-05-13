@@ -7,7 +7,9 @@ scipy==1.13.0
 sklearn-preprocessing==0.1.0
 tensorflow==2.16.1
 dvc==3.50.1
+dvc-gdrive
 pylint==2.12.2
 dslinter==2.0.9
 flake8<=7.0.0
-lib_ml @ git+https://github.com/Release-Engineering-Group-13/lib-ml.git@v1.0.2
+lib_ml @ git+https://github.com/Release-Engineering-Group-13/lib-ml.git@v1.0.3
+ellipsis

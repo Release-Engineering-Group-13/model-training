@@ -1,6 +1,6 @@
-from joblib import dump, load
-import json
+'''Evaluates the model'''
 
+import json
 import os
 from joblib import dump, load
 
@@ -71,7 +71,7 @@ def main():
         "Accuracy": float(accuracy),
         "F1 Score": float(2 * precision * sensitivity / (precision + sensitivity))
     }
-    with open("output/metrics.json", "w") as file:
+    with open("output/metrics.json", "w", encoding="utf-8") as file:
         json.dump(metrics, file)
 
 
