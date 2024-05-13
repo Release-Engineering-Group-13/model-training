@@ -27,8 +27,8 @@ def model_predict(x_test, y_test, model):
     # Calculate confusion matrix
     confusion_mat = confusion_matrix(y_test, y_pred_binary)
     print('Confusion Matrix:', confusion_mat)
-    accuracy = accuracy_score(y_test,y_pred_binary)
-    print('Accuracy:',accuracy)
+    accuracy = accuracy_score(y_test, y_pred_binary)
+    print('Accuracy:', accuracy)
 
     return report, confusion_mat, accuracy
 
