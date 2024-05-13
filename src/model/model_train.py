@@ -17,7 +17,7 @@ def model_train(x_train, y_train, x_val, y_val, char_index):
               'batch_test': 5000,
               'categories': ['phishing', 'legitimate'],
               'char_index': None,
-              'epoch': 30,
+              'epoch': 1,
               'embedding_dimension': 50}
 
     model = Sequential()
