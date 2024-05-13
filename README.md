@@ -1,6 +1,6 @@
 
-# CS4295_Project
-Final project for CS4295 Release Engineering for Machine Learning Applications.
+# Model training
+Responsible for the training of the machine learning model
 
 
 ## Setup

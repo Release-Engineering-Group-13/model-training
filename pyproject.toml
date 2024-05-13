@@ -18,6 +18,7 @@ sklearn-preprocessing= "^0.1.0"
 tensorflow= "^2.16.1"
 dvc= "^3.50.1"
 lib-ml = {git = "https://github.com/Release-Engineering-Group-13/lib-ml.git", rev = "v1.0.2"}
+ellipsis = "^3.1.45"
 
 
 [build-system]

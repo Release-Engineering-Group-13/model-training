@@ -1,4 +1,4 @@
-"""This module downloads the dataset from kaggle and stores it in a folder."""
+"""This module downloads the dataset from kaggle and stores it in a folder data/raw."""
 
 import os
 import kaggle

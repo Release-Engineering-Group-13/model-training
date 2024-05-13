@@ -39,3 +39,10 @@ stages:
     - data/interim/report.joblib
     metrics:
     - output/metrics.json
+  upload_model:
+    cmd: python src/model/upload_model.py
+    deps:
+    - src/model/upload_model.py
+    - data/interim/model.joblib
+    outs:
+    - output/model_id
