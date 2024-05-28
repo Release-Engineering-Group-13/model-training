@@ -25,8 +25,8 @@ jobs:
       run: |
         flake8 --max-line-length=100
     - name: Test with pytest  
-        run: |  
-          coverage run -m pytest  -v -s  
+      run: |  
+        coverage run -m pytest  -v -s  
     - name: Generate Coverage Report  
-        run: |  
-          coverage report -m
+      run: |  
+        coverage report -m
