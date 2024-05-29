@@ -8,7 +8,8 @@ from keras.models import Sequential
 from keras.layers import Embedding, Conv1D, MaxPooling1D, Flatten, Dense, Dropout
 
 
-def model_train(x_train, y_train, x_val, y_val, char_index, seed=812, batch_train=5000, batch_test=5000):
+def model_train(x_train, y_train, x_val, y_val, char_index,
+                seed=812, batch_train=5000, batch_test=5000):
     """Trains the model with the given parameters and data."""
 
     keras.utils.set_random_seed(seed)
