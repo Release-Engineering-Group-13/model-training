@@ -74,6 +74,10 @@ It is important that pytest is executed in the model-training directory, otherwi
    pytest
    ```
 
+## TODOS for testing
+- Implement mutamorphic testing
+- Report adequacy metrics
+
 ## Authors
 - Esha Dutta
 - Vanessa Timmer
