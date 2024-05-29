@@ -1,5 +1,8 @@
+import numpy as np
 from src.preprocessing.preprocessing import main
 from src.model.model_train import model_train
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 import os
 from joblib import load
 import pytest
@@ -38,6 +41,22 @@ def trained_model(x_data, y_data, char_index):
 
 
 @pytest.fixture()
-def predictions(trained_model, x_data):
-    y_pred = trained_model.predict(x_data[2], batch_size=1000)
-    yield y_pred
+def phishing_links():
+    """ Extracts phishing links from the test file. """
+    dataset_folder = "tests/test_data/"
+    file = "test.txt"
+    phishing_links = []
+
+    with open(dataset_folder + file, "r", encoding="utf-8") as lines:
+        for line in lines:
+            label, link = line.strip().split("\t")
+            if label == "phishing":
+                phishing_links.append(link)
+
+    tokenizer = Tokenizer(lower=True, char_level=True, oov_token='-n-')
+    tokenizer.fit_on_texts(phishing_links)  # Fit on phishing links only for this fixture
+    sequence_length = 200
+    processed_links = pad_sequences(tokenizer.texts_to_sequences(phishing_links),
+                                    maxlen=sequence_length)
+
+    yield np.array(processed_links)

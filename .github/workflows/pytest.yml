@@ -1,6 +1,8 @@
-name: Linters
+name: Pytest
 
-on: push
+on: pull_request
+  branches:
+    - main
 
 jobs:
   build:
@@ -14,13 +16,10 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install pylint, dslinter, and flake8
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run Pylint
-      run: |
-        pylint ./src
-    - name: Run Flake8
-      run: |
-        flake8 --max-line-length=100
+    - name: Test with pytest  
+      run: |  
+        pytest 

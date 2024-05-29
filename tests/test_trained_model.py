@@ -1,10 +1,11 @@
 # flake8: noqa
 import numpy as np
 from src.model.model_train import model_train
-from fixtures import char_index, x_data, y_data, trained_model, predictions
+from fixtures import char_index, x_data, y_data, trained_model, phishing_links
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 
 
 # Model development test
@@ -19,7 +20,12 @@ def test_nondet_robustness(x_data, y_data, char_index, trained_model):
     assert abs(acc_1 - acc_2) <= 0.025
 
 
-# TODO: Test on data slice (model development)
+# Test on data slice (model development)
+def test_phishing_links(phishing_links, trained_model):
+    """ Tests whether prediction performance on phishing links is adequate. """
+    y = np.array([0] * len(phishing_links))
+    acc_phishing = trained_model.evaluate(phishing_links, y)[1]
+    assert acc_phishing > 0.80
 
 
 # Infrastructure test
@@ -34,7 +40,8 @@ def test_loss_decrease(x_data, y_data, trained_model):
 
 
 # Monitoring test
-def test_prediction_values_validity(predictions):
+def test_prediction_values_validity(x_data, trained_model):
     """ Tests if predictions are between 0 and 1, and if they're not NaN or infinity. """
+    predictions = trained_model.predict(x_data[2], batch_size=1000)
     assert np.nan not in predictions and np.inf not in predictions
     assert np.all((predictions >= 0) | (predictions <= 1))
