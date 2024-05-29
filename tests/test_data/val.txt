@@ -1,0 +1,10 @@
+phishing	https://blockchaoin.info/#/
+legitimate	https://www.insects.org/ced4/crush_freaks.html
+legitimate	https://www.elpasotimes.com/story/opinion/editorials/2015/11/17/editorial-terror-attack-brings-tough-choices/75960544/
+phishing	http://direct-certs.bankofamerica.com.techdbaseurl46.cn/direct/certpickup.asp?session=5205817050667567602066511025245896499574920702005427213141662
+legitimate	https://gotham-magazine.com/lalique-unveils-epis-ring
+legitimate	https://www.archery360.com/2015/05/12/get-outside-3-outdoor-archery-games-to-try-this-summer/%20http:/www.asaarchery.com/ip/
+legitimate	http://www.chuge8.com/html/qita/
+legitimate	https://www.upexpress.com/en/information/information.aspx
+legitimate	http://www.eurasiareview.com/07102016-the-geopolitical-dynamics-of-ethno-national-conflicts-oped/
+phishing	http://session-4154179783.nationalcity.com.userpro.tw/corporate/onlineservices/TreasuryMgmt/

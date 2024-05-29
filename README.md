@@ -67,6 +67,17 @@ dvc repro
    flake8 --max-line-length=100 path\to\file.py
    ```
 
+## Running pytest
+It is important that pytest is executed in the model-training directory, otherwise it'll fail to find the data files. The data files in test_data each consist of 1000 links and their ground truth labels. 
+1. Run pylint:
+   ```bash
+   pytest
+   ```
+
+## TODOS for testing
+- Implement mutamorphic testing
+- Report adequacy metrics
+
 ## Authors
 - Esha Dutta
 - Vanessa Timmer
