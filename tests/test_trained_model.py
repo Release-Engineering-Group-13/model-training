@@ -1,3 +1,4 @@
+# flake8: noqa
 import numpy as np
 from src.model.model_train import model_train
 from fixtures import char_index, x_data, y_data, trained_model, predictions
@@ -15,7 +16,6 @@ def test_nondet_robustness(x_data, y_data, char_index, trained_model):
                              char_index, seed=2952024,
                              batch_train=50, batch_test=50)
     acc_2 = model_2.evaluate(x_data[2], y_data[2])[1]
-    #assert acc_1 == acc_2
     assert abs(acc_1 - acc_2) <= 0.025
 
 

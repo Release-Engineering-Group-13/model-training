@@ -31,7 +31,9 @@ def y_data():
 
 @pytest.fixture()
 def trained_model(x_data, y_data, char_index):
-    trained_model, _ = model_train(x_data[0], y_data[0], x_data[1], y_data[1], char_index, batch_train=50, batch_test=50)
+    trained_model, _ = model_train(x_data[0], y_data[0],
+                                   x_data[1], y_data[1],
+                                   char_index, batch_train=50, batch_test=50)
     yield trained_model
 
 
