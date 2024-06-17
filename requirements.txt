@@ -14,4 +14,3 @@ flake8<=7.0.0
 lib_ml @ git+https://github.com/Release-Engineering-Group-13/lib-ml.git@v1.0.3
 ellipsis
 pytest==8.2.1
-ElementTree==1.3.0

@@ -27,7 +27,6 @@ jobs:
 
     - name: Update README with test results
       run: |
-        pip install xml.etree.ElementTree
         python update_readme.py
 
     - name: Commit and push changes
