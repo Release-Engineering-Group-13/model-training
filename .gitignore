@@ -163,3 +163,4 @@ cython_debug/
 # Our own project
 /data/
 /output/
+report.xml
