@@ -1,4 +1,8 @@
 
+<!-- pytest-badge-start -->
+<!-- pytest-badge-end -->
+
+
 # Model training
 Responsible for the training of the machine learning model
 
@@ -84,6 +88,9 @@ It is important that pytest is executed in the model-training directory, otherwi
 - Maarten van Bijsterveldt 
 - Nick Dubbeldam
 
+## Pytest
+<!-- pytest-results-start -->
+<!-- pytest-results-end -->
 
 ## License
 
