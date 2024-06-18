@@ -39,6 +39,7 @@ def trained_model(x_data, y_data, char_index):
                                    char_index, batch_train=50, batch_test=50)
     yield trained_model
 
+
 @pytest.fixture()
 def preprocessed_phising_links():
     """ Extracts phishing links from the test file. """
@@ -51,8 +52,9 @@ def preprocessed_phising_links():
             label, link = line.strip().split("\t")
             if label == "phishing":
                 phishing_links.append(link)
-    
+
     yield np.array(phishing_links)
+
 
 @pytest.fixture()
 def processed_phishing_links():
