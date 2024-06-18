@@ -39,9 +39,23 @@ def trained_model(x_data, y_data, char_index):
                                    char_index, batch_train=50, batch_test=50)
     yield trained_model
 
+@pytest.fixture()
+def preprocessed_phising_links():
+    """ Extracts phishing links from the test file. """
+    dataset_folder = "tests/test_data/"
+    file = "test.txt"
+    phishing_links = []
+
+    with open(dataset_folder + file, "r", encoding="utf-8") as lines:
+        for line in lines:
+            label, link = line.strip().split("\t")
+            if label == "phishing":
+                phishing_links.append(link)
+    
+    yield np.array(phishing_links)
 
 @pytest.fixture()
-def phishing_links():
+def processed_phishing_links():
     """ Extracts phishing links from the test file. """
     dataset_folder = "tests/test_data/"
     file = "test.txt"
