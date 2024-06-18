@@ -94,7 +94,7 @@ It is important that pytest is executed in the model-training directory, otherwi
 
 ### Pytest Results
 
-- **Tests:** 5
+- **Tests:** 12
 - **Errors:** 0
 - **Failures:** 0
 - **Skipped:** 0
