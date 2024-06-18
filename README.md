@@ -1,7 +1,6 @@
 
-<!-- pytest-badge-start -->
-![Pytest](https://img.shields.io/badge/tests-passing-brightgreen?logo=pytest)
-<!-- pytest-badge-end -->
+<!-- badge-start -->
+<!-- badge-end -->
 
 
 # Model training
@@ -89,17 +88,9 @@ It is important that pytest is executed in the model-training directory, otherwi
 - Maarten van Bijsterveldt 
 - Nick Dubbeldam
 
-## Pytest
-<!-- pytest-results-start -->
-
-### Pytest Results
-
-- **Tests:** 5
-- **Errors:** 0
-- **Failures:** 0
-- **Skipped:** 0
-
-<!-- pytest-results-end -->
+## Tests
+<!-- results-start -->
+<!-- results-end -->
 
 ## License
 

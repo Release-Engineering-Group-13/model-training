@@ -21,9 +21,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run tests and generate report
+    - name: Run Pylint and generate report
       run: |
-        pytest --junitxml=report.xml
+        pylint ./src --output-format=pylint_junit.JUnitReporter --output=pylint-report.xml
+
+    - name: Run Flake8 and generate report
+      run: |
+        flake8 --max-line-length=100 --format junit-xml --output-file flake8-report.xml
+
+    - name: Run pytest and generate report
+      run: |
+        pytest --junitxml=pytest-report.xml
 
     - name: Update README with test results
       run: |
