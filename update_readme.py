@@ -48,7 +48,7 @@ def update_readme_text(readme_file, pylint_results, pytest_results, flake8_resul
 
 
 def generate_badge_url(name, results):
-    tests = results[0]
+    # tests = results[0]
     errors = results[1]
     failures = results[2]
     skipped = results[3]
