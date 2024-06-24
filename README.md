@@ -1,5 +1,8 @@
 
 <!-- badge-start -->
+![Pytest](https://img.shields.io/badge/pylint-passing-brightgreen?logo=pylint)
+![Pytest](https://img.shields.io/badge/pytest-passing-brightgreen?logo=pytest)
+![Pytest](https://img.shields.io/badge/flake8-passing-brightgreen?logo=flake8)
 <!-- badge-end -->
 
 
@@ -90,6 +93,30 @@ It is important that pytest is executed in the model-training directory, otherwi
 
 ## Tests
 <!-- results-start -->
+
+### Pytest Results
+
+- **Tests:** 1
+- **Errors:** 0
+- **Failures:** 0
+- **Skipped:** 0
+
+
+### Pylint Results
+
+- **Tests:** 5
+- **Errors:** 0
+- **Failures:** 0
+- **Skipped:** 0
+
+
+### Flake8 Results
+
+- **Tests:** 1
+- **Errors:** 0
+- **Failures:** 0
+- **Skipped:** 0
+
 <!-- results-end -->
 
 ## License
