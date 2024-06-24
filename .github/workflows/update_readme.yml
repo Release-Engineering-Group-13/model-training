@@ -1,0 +1,53 @@
+name: Test and Update README
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10"]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Pylint and generate report
+      run: |
+        pylint ./src --output-format=pylint_junit.JUnitReporter --output=pylint-report.xml
+
+    - name: Run Flake8 and generate report
+      run: |
+        flake8 --max-line-length=100 --format junit-xml --output-file flake8-report.xml
+
+    - name: Run pytest and generate report
+      run: |
+        pytest --junitxml=pytest-report.xml
+
+    - name: Update README with test results
+      run: |
+        python update_readme.py
+
+    - name: Check for changes and commit if needed
+      continue-on-error: true
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        if ! git diff --quiet; then
+          git add README.md
+          git commit -m 'Update README with test results'
+          git push
+        else
+          echo "No changes to commit"
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT }}
