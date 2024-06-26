@@ -128,11 +128,11 @@ stages:
       size: 5475881
     - path: src/model/upload_model.py
       hash: md5
-      md5: 7abbb2b026bf387914307e8902ef6d2a
-      size: 676
+      md5: 391000663220370ded432d35a650e1c8
+      size: 724
     outs:
     - path: output/model_id
       hash: md5
-      md5: 8ebc323379a549c5b31a6b22a5881e6b
+      md5: 9de14a36ddeb5c6d96cd6ef88b98bc22
       size: 36
       isexec: true
