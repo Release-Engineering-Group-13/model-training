@@ -28,6 +28,10 @@ To set up the project, follow these steps:
     poetry install
     ```
 
+4. Enter the poetry environment to run DVC commands:
+    ```bash
+    poetry shell
+
 
 Windows users might run into errors when trying to use Poetry for this project (see [open issue](https://github.com/tensorflow/io/issues/1789)). In that case, use a venv virtual environment:
 
@@ -38,7 +42,7 @@ Windows users might run into errors when trying to use Poetry for this project (
     
 3. Install requirements in virtual environment
     ```bash
-    path\to\yourenv\activate
+    source yourenv/bin/activate
     pip install -r requirements.txt
     ```
 
@@ -47,6 +51,11 @@ Windows users might run into errors when trying to use Poetry for this project (
     In order to download the dataset, you must first authenticate using an kaggle API token. Go to the 'Account' tab of your user profile and select 'Create New Token'. This will trigger the download of kaggle.json, a file containing your API credentials.
 
     If you are using the Kaggle CLI tool, the tool will look for this token at ~/.kaggle/kaggle.json on Linux, OSX, and other UNIX-based operating systems, and at C:\Users\\\<Windows-username\>\\.kaggle\kaggle.json on Windows. If the token is not there, an error will be raised. Hence, once you’ve downloaded the token, you should move it from your Downloads folder to this folder.
+
+5. To exit the virtual environment (Poetry or venv), type
+    ```bash
+    exit
+    ```
 
 ## Usage
 Run the code using DVC:
@@ -82,7 +91,7 @@ dvc exp show
 
 ## Running pytest
 It is important that pytest is executed in the model-training directory, otherwise it'll fail to find the data files. The data files in test_data each consist of 1000 links and their ground truth labels. 
-1. Run pylint:
+1. Run pytest:
    ```bash
    pytest
    ```

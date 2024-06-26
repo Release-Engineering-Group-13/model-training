@@ -20,6 +20,12 @@ dvc= "^3.50.1"
 lib-ml = {git = "https://github.com/Release-Engineering-Group-13/lib-ml.git", rev = "v1.0.3"}
 ellipsis = "^3.1.45"
 dvc-gdrive = "^3.0.1"
+pylint = "2.12.2"
+dslinter = "2.0.9"
+flake8 = "^4.0.0"
+pytest = "8.2.1"
+pylint_junit = "0.2.0"
+flake8-formatter-junit-xml = "0.0.6"
 
 
 [build-system]

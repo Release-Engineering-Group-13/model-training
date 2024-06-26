@@ -1,11 +1,12 @@
+'''Test trained model'''
+
 # flake8: noqa
-import numpy as np
-from src.model.model_train import model_train
-from fixtures import char_index, x_data, y_data, trained_model, phishing_links
 import os
 import sys
+import numpy as np
+from src.model.model_train import model_train
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
+from fixtures import char_index, x_data, y_data, trained_model, phishing_links
 
 
 # Model development test
@@ -23,7 +24,7 @@ def test_nondet_robustness(x_data, y_data, char_index, trained_model):
 # Test on data slice (model development)
 def test_phishing_links(phishing_links, trained_model):
     """ Tests whether prediction performance on phishing links is adequate. """
-    y = np.array([0] * len(phishing_links))
+    y = np.array([0] * len(phishing_links)) 
     acc_phishing = trained_model.evaluate(phishing_links, y)[1]
     assert acc_phishing > 0.80
 
