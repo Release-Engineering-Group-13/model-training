@@ -22,10 +22,6 @@ To set up the project, follow these steps:
     ```bash
     curl -sSL https://install.python-poetry.org | python3 -
     ```
-<!-- 3. Install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ``` -->
 
 3. Install the required dependencies using Poetry:
     ```bash
@@ -50,18 +46,28 @@ Windows users might run into errors when trying to use Poetry for this project (
 
     In order to download the dataset, you must first authenticate using an kaggle API token. Go to the 'Account' tab of your user profile and select 'Create New Token'. This will trigger the download of kaggle.json, a file containing your API credentials.
 
-    If you are using the Kaggle CLI tool, the tool will look for this token at ~/.kaggle/kaggle.json on Linux, OSX, and other UNIX-based operating systems, and at C:\Users\<Windows-username>\.kaggle\kaggle.json on Windows. If the token is not there, an error will be raised. Hence, once you’ve downloaded the token, you should move it from your Downloads folder to this folder.
+    If you are using the Kaggle CLI tool, the tool will look for this token at ~/.kaggle/kaggle.json on Linux, OSX, and other UNIX-based operating systems, and at C:\Users\\\<Windows-username\>\\.kaggle\kaggle.json on Windows. If the token is not there, an error will be raised. Hence, once you’ve downloaded the token, you should move it from your Downloads folder to this folder.
 
 ## Usage
-Run the code using DVC (if using Poetry):
-
-```bash
-poetry run dvc repro
-```
-
-If not using Poetry, run:
+Run the code using DVC:
 ```bash
 dvc repro
+```
+
+## Metrics
+To run an experiment with DVC, use:
+```bash
+dvc exp run
+```
+
+To see the difference between experiments, run:
+```bash
+dvc metrics diff
+```
+
+Show different experiments with:
+```bash
+dvc exp show
 ```
 
 ## Running linters
@@ -80,10 +86,6 @@ It is important that pytest is executed in the model-training directory, otherwi
    ```bash
    pytest
    ```
-
-## TODOS for testing
-- Implement mutamorphic testing
-- Report adequacy metrics
 
 ## Authors
 - Esha Dutta
