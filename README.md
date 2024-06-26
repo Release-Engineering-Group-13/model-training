@@ -58,6 +58,11 @@ Windows users might run into errors when trying to use Poetry for this project (
     ```
 
 ## Usage
+Pull the dvc repro:
+```bash
+dvc pull
+```
+
 Run the code using DVC:
 ```bash
 dvc repro
