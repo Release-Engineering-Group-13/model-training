@@ -71,6 +71,10 @@ def main():
         "Accuracy": float(accuracy),
         "F1 Score": float(2 * precision * sensitivity / (precision + sensitivity))
     }
+
+    if not os.path.exists("output"):
+        os.makedirs("output")
+
     with open("output/metrics.json", "w", encoding="utf-8") as file:
         json.dump(metrics, file)
 

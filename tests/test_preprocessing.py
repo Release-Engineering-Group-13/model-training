@@ -1,7 +1,9 @@
+'''Test preprocessing'''
+
 # flake8: noqa
-from lib_ml import preprocess_input
 import os
 import sys
+from lib_ml import preprocess_input
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
