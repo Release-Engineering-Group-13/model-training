@@ -11,7 +11,7 @@ def main():
     if len(paths):
         el.path.trash(paths[0]['id'], token)
 
-    path_id = el.path.file.add(filePath="data/interim/model.joblib", 
+    path_id = el.path.file.add(filePath="data/interim/model.joblib",
                                parentId="12b2838a-fa7e-4215-bb50-069df2879311", token=token)['id']
     el.path.editPublicAccess(pathId=path_id, token=token, access={"accessLevel": 100})
 
